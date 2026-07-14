@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Di cosa hai bisogno?</title>
+
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+<body>
+
+<div class="container">
+
+    <div class="top-buttons">
+        <a href="/menu" class="icon-button">←</a>
+        <a href="/" class="icon-button">⌂</a>
+    </div>
+
+
+    <h1>
+        Di cosa hai bisogno?
+    </h1>
+
+
+    <p class="soft-title">
+        Dai amore, non farti problemi ❤️
+    </p>
+
+
+    <form action="/send_need" method="POST">
+
+        <textarea 
+        name="message"
+        placeholder="Scrivi qui..."
+        rows="4"></textarea>
+
+
+        <button class="help-button" type="submit">
+            Invia
+        </button>
+
+    </form>
+
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
