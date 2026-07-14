@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <title>5-4-3-2-1</title>
+
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="top-buttons">
+        <a href="/menu" class="icon-button">←</a>
+        <a href="/" class="icon-button">⌂</a>
+    </div>
+
+
+    <h1 id="step-title">
+        5 cose che riesci a vedere
+    </h1>
+
+
+    <p id="step-text">
+        Guarda lentamente intorno a te.
+        Trova cinque cose che riesci a vedere.
+    </p>
+
+
+    <button id="continue-btn" class="help-button">
+        Continua
+    </button>
+
+</div>
+
+
+<script>
+
+let step = 0;
+
+
+const steps = [
+    [
+        "5 cose che riesci a vedere",
+        "Guarda lentamente intorno a te. Trova cinque cose che riesci a vedere."
+    ],
+    [
+        "4 cose che puoi toccare",
+        "Concentrati su quattro cose che puoi sentire con il tatto."
+    ],
+    [
+        "3 cose che puoi sentire",
+        "Ascolta attentamente e trova tre suoni intorno a te."
+    ],
+    [
+        "2 cose che puoi annusare",
+        "Trova due profumi o odori vicino a te."
+    ],
+    [
+        "1 cosa che puoi assaporare",
+        "Concentrati su un sapore o una sensazione piacevole."
+    ],
+    [
+        "Bravissima ❤️",
+        "Hai fatto un ottimo lavoro. Respira, questo momento passerà."
+    ]
+];
+
+
+document.getElementById("continue-btn").onclick = function() {
+
+    step++;
+
+    document.getElementById("step-title").innerText = steps[step][0];
+
+    document.getElementById("step-text").innerText = steps[step][1];
+
+
+    if(step === steps.length - 1) {
+        document.getElementById("continue-btn").style.display = "none";
+    }
+
+};
+
+</script>
+
+
+</body>
+
+</html>
